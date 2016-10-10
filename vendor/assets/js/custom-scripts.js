@@ -21,8 +21,8 @@
                 }
             });
 
-            /* MORRIS BAR CHART
-			-----------------------------------------*/
+           /* /!* MORRIS BAR CHART
+			-----------------------------------------*!/
             Morris.Bar({
                 element: 'morris-bar-chart',
                 data: [{
@@ -59,16 +59,16 @@
                 labels: ['Series A', 'Series B'],
 				 barColors: [
     '#A6A6A6','#1cc09f',
-    '#A8E9DC' 
+    '#A8E9DC'
   ],
                 hideHover: 'auto',
                 resize: true
             });
-	 
 
 
-            /* MORRIS DONUT CHART
-			----------------------------------------*/
+
+            /!* MORRIS DONUT CHART
+			----------------------------------------*!/
             Morris.Donut({
                 element: 'morris-donut-chart',
                 data: [{
@@ -83,13 +83,13 @@
                 }],
 				   colors: [
     '#A6A6A6','#1cc09f',
-    '#A8E9DC' 
+    '#A8E9DC'
   ],
                 resize: true
             });
 
-            /* MORRIS AREA CHART
-			----------------------------------------*/
+            /!* MORRIS AREA CHART
+			----------------------------------------*!/
 
             Morris.Area({
                 element: 'morris-area-chart',
@@ -155,8 +155,8 @@
                 resize: true
             });
 
-            /* MORRIS LINE CHART
-			----------------------------------------*/
+            /!* MORRIS LINE CHART
+			----------------------------------------*!/
             Morris.Line({
                 element: 'morris-line-chart',
                 data: [
@@ -172,8 +172,8 @@
 					  { y: '2023', a: 145, b: 155},
 					  { y: '2024', a: 160, b: 195}
 				],
-            
-				 
+
+
       xkey: 'y',
       ykeys: ['a', 'b'],
       labels: ['Total Income', 'Total Outcome'],
@@ -184,8 +184,8 @@
       pointFillColors:['#ffffff'],
       pointStrokeColors: ['black'],
       lineColors:['gray','#1cc09f']
-	  
-            });
+
+            });*/
            
      
         },
