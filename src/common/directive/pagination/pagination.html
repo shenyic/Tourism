@@ -6,7 +6,7 @@
         <li ng-repeat="page in pages" ng-class="{active: isActive(page)}" class="paginate_button" aria-controls="dataTables-example">
             <a ng-click="selectPage(page)">{{page}}</a>
         </li>
-        <li ng-class="{disabled: noNext()}" ng-click="selectNext()" class="paginate_button next" aria-controls="dataTables-example">
+        <li ng-class="{disabled: noNext()}" class="paginate_button next" aria-controls="dataTables-example">
             <a ng-click="selectNext()">下一页</a>
         </li>
     </ul>

@@ -43,7 +43,7 @@ angular.module('app')
                 };
 
                 scope.selectNext = function() {
-                    if ( !scope.noNext() ) {
+                    if (!scope.noNext() ) {
                         scope.selectPage(scope.currentPage+1);
                     }
                 };
