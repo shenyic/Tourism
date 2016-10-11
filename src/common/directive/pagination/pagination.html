@@ -1,14 +1,13 @@
 <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
     <ul class="pagination">
-        <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0"
-            id="dataTables-example_previous"><a href="#">Previous</a></li>
-        <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">1</a></li>
-        <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">2</a></li>
-        <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">3</a></li>
-        <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">4</a></li>
-        <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">5</a></li>
-        <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">6</a></li>
-        <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a
-                href="#">Next</a></li>
+        <li ng-class="{disabled: noPrevious()}" class="paginate_button previous" aria-controls="dataTables-example">
+            <a ng-click="selectPrevious()">前一页</a>
+        </li>
+        <li ng-repeat="page in pages" ng-class="{active: isActive(page)}" class="paginate_button" aria-controls="dataTables-example">
+            <a ng-click="selectPage(page)">{{page}}</a>
+        </li>
+        <li ng-class="{disabled: noNext()}" ng-click="selectNext()" class="paginate_button next" aria-controls="dataTables-example">
+            <a ng-click="selectNext()">下一页</a>
+        </li>
     </ul>
 </div>
