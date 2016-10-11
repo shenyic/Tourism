@@ -1,6 +1,6 @@
 "use strict";
 
-var App=angular.module('app',['ui.router','oc.lazyLoad'])
+angular.module('app',['ui.router','oc.lazyLoad'])
     .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 
         var baseUrl='app';
@@ -18,6 +18,4 @@ var App=angular.module('app',['ui.router','oc.lazyLoad'])
                 }]
             }
         });
-
-
 }]);
