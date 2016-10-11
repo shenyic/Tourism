@@ -1,0 +1,18 @@
+[
+  {
+    "label": "9月",
+    "value": 2362,
+    "color":"#30a5ff",
+    "highlight": "#62b9fb"
+  },
+  {
+    "label": "10月",
+    "value": 3251,
+    "color": "#ffb53e",
+    "highlight": "#fac878"
+  },
+  {
+    "label": "8月",
+    "value": 1917
+  }
+]
