@@ -13,6 +13,8 @@
   },
   {
     "label": "8月",
-    "value": 1917
+    "value": 1917,
+    "color": "#f9243f",
+    "highlight": "#f6495f"
   }
 ]
