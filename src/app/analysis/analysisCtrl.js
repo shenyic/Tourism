@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('app')
-    .controller('analysisCtrl',['$http',function($http,$parseInt){
+    .controller('analysisCtrl',['$http',function($http){
         var ctrl=this;
 
         $http({

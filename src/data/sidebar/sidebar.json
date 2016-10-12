@@ -1,0 +1,12 @@
+[
+  {
+    "name":"统计分析",
+    "uiSref":"analysis",
+    "icon":"fa-bar-chart-o"
+  },
+  {
+    "name":"系统用户管理",
+    "uiSref":"systemUser",
+    "icon":"fa-desktop"
+  }
+]

@@ -39,7 +39,7 @@
     <script src="common/directive/pagination/pagination.js"></script>
 </head>
 
-<body ng-app="app">
+<body ng-app="app" ng-controller="mainCtrl as ctrl">
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -266,9 +266,8 @@
 		<div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a class="active-menu" ui-sref="analysis"><i class="fa fa-bar-chart-o"></i>统计分析</a>
+                    <li ng-repeat="item in ctrl.list">
+                        <a ng-class="{'active-menu':ctrl.path=='/'+item.uiSref}" ui-sref="{{item.uiSref}}"><i class="fa {{item.icon}}"></i>{{item.name}}</a>
                     </li>
                 </ul>
 
