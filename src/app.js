@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('app',['ui.router','oc.lazyLoad'])
+angular.module('app',['ui.bootstrap','ui.router','oc.lazyLoad'])
     .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 
         var baseUrl='app';
@@ -32,8 +32,6 @@ angular.module('app',['ui.router','oc.lazyLoad'])
         });
 }]).controller("mainCtrl",function($scope,$http,$location){
         var ctrl=this;
-
-
 
         $scope.$watch(function() {
             return $location.path();
