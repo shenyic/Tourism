@@ -24,6 +24,7 @@
     "oclazyload": "^1.0.9"
   },
   "dependencies": {
-    "angular-bootstrap": "^2.2.0"
+    "angular-bootstrap": "^2.2.0",
+    "zTree": "^3.5.24"
   }
 }

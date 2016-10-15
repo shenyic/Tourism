@@ -39,6 +39,19 @@ angular.module('app',['ui.bootstrap','ui.router','oc.lazyLoad'])
             ctrl.path=newValue;
         });
 
+        $("#sideNav").click(function(){
+            if($(this).hasClass('closed')){
+                $('.navbar-side').animate({left: '0px'});
+                $(this).removeClass('closed');
+                $('#page-wrapper').animate({'margin-left' : '260px'});
+            }
+            else{
+                $(this).addClass('closed');
+                $('.navbar-side').animate({left: '-260px'});
+                $('#page-wrapper').animate({'margin-left' : '0px'});
+            }
+        });
+
 
         $http({
             url:'data/sidebar/sidebar.json',

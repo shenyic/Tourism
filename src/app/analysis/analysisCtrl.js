@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('app')
-    .controller('analysisCtrl',['$http',function($http){
+    .controller('analysisCtrl',['$http','$scope','$timeout',function($http,$scope,$timeout){
         var ctrl=this;
 
         $http({
@@ -9,6 +9,7 @@ angular.module('app')
             method:'get'
         }).then(function(response){
             ctrl.data=response.data.users;
+            ctrl.currentPage=1;
             ctrl.pageSize=response.data.pageSize;
             ctrl.numPages=response.data.numPages;
             ctrl.users=ctrl.data.slice(0,ctrl.pageSize);
@@ -19,7 +20,7 @@ angular.module('app')
             method:'get'
         }).then(function(response){
             ctrl.gain=response.data;
-            Morris.Bar({
+            ctrl.bar=Morris.Bar({
                 element: 'morris-bar-chart',
                 data:ctrl.gain,
                 xkey: 'y',
@@ -29,7 +30,6 @@ angular.module('app')
                 resize: true
             });
         });
-
 
         $http({
             url:'data/analysis/pageView.json',
@@ -43,15 +43,9 @@ angular.module('app')
             });
         });
 
-
-
-
         ctrl.selectPage=function(page){
             ctrl.users=ctrl.data.slice((page-1)*ctrl.pageSize,(page-1)*ctrl.pageSize+ctrl.pageSize);
         };
-
-
-
 
 
 }]);

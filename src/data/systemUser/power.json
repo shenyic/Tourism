@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "pId": 0,
+    "name": "统计分析",
+    "open": true,
+    "icon": "../vendor/zTree/css/zTreeStyle/img/diy/1_open.png"
+  },
+  {
+    "id": 2,
+    "pId": 0,
+    "name": "系统用户管理",
+    "open": true,
+    "icon": "../vendor/zTree/css/zTreeStyle/img/diy/1_open.png"
+  },
+  {
+    "id": 21,
+    "pId": 2,
+    "name": "增加系统用户"
+  },
+  {
+    "id": 22,
+    "pId": 2,
+    "name": "编辑系统用户"
+  },
+  {
+    "id": 23,
+    "pId": 2,
+    "name": "删除系统用户"
+  },
+  {
+    "id": 24,
+    "pId": 2,
+    "name": "授予用户权限"
+  }
+]
