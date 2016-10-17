@@ -30,7 +30,7 @@ angular.module('app',['ui.bootstrap','ui.router','oc.lazyLoad'])
                 }]
             }
         });
-}]).controller("mainCtrl",function($scope,$http,$location){
+}]).controller("mainCtrl",function($scope,$http,$location,$window){
         var ctrl=this;
 
         $scope.$watch(function() {
@@ -50,6 +50,11 @@ angular.module('app',['ui.bootstrap','ui.router','oc.lazyLoad'])
                 $('.navbar-side').animate({left: '-260px'});
                 $('#page-wrapper').animate({'margin-left' : '0px'});
             }
+        });
+
+        $(window).resize(function(){
+            $('#page-wrapper').css({"height":window.innerHeight-60+"px"});
+            $scope.apply();
         });
 
 
