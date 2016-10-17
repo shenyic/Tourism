@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-md-offset-3 col-md-3">
                             <div class="form-group input-group" style="float: right">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" ng-model="ctrl.search">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button"><i class="fa fa-search"></i>
                                     </button>
@@ -46,7 +46,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="odd gradeX" ng-repeat="user in ctrl.systemUsers">
+                            <tr class="odd gradeX" ng-repeat="user in ctrl.systemUsers | filter:ctrl.search">
                                 <td><input type="checkbox" ng-model="user.checked"></td>
                                 <td>{{user.realName}}</td>
                                 <td>{{user.nickName}}</td>
@@ -57,7 +57,7 @@
                                 <td>{{user.createPerson}}</td>
                                 <td>
                                     <button class="btn btn-info pull-left" ng-click="ctrl.doGive()">权限授予</button>
-                                    <button class="btn btn-danger" ng-click="ctrl.doEdit()" style="margin-left: 20px;">修改</button>
+                                    <button class="btn btn-danger" ng-click="ctrl.doEdit(user)" style="margin-left: 20px;">修改</button>
                                 </td>
                             </tr>
                             </tbody>
