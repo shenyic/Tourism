@@ -19,7 +19,7 @@ body {
 }
 
 #page-wrapper {
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 15px 15px;
     background: #f3f3f3;
    
@@ -77,11 +77,16 @@ position: fixed;
   -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
 }
+.top-navbar .header-message,
+.top-navbar .header-user{
+    color: white;
+    padding: 0 20px;
+}
 .navbar-side {
   z-index: 1;
   position: fixed;
   width: 260px;
-  top: 80px;
+  top: 100px;
 }
 #page-wrapper {
   position: relative;
@@ -383,7 +388,7 @@ font-size: 24px;
 font-weight: 700;
 text-transform: uppercase;
 line-height: 30px;
-background: #283643;
+background: #1cc09f;
 }
 .navbar-brand b{
 color: #4BD28C;
@@ -505,10 +510,8 @@ background: #17191B;
 .top-navbar .nav > li > a > i {
 margin-right: 2px;
 }
-.top-navbar .navbar-brand:hover { 
-color: #1CC09F;
-
-background-color: rgb(43, 46, 51);
+.top-navbar .navbar-brand:hover {
+color: white;
 }
 .dropdown-user li {
 margin: 8px 0;

@@ -26,8 +26,7 @@ angular.module('app')
                 xkey: 'y',
                 ykeys: ['a', 'b'],
                 labels: ['上月', '当月'],
-                hideHover: 'auto',
-                resize: true
+                hideHover: 'auto'
             });
         });
 
@@ -38,8 +37,7 @@ angular.module('app')
             ctrl.pageView=response.data;
             Morris.Donut({
                 element: 'morris-donut-chart',
-                data:ctrl.pageView,
-                resize: true
+                data:ctrl.pageView
             });
         });
 

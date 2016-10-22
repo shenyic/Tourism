@@ -1,36 +1,26 @@
 "use strict";
 
-angular.module('app',['ui.bootstrap','ui.router','oc.lazyLoad'])
+angular.module('app',['ui.bootstrap','ui.router','oc.lazyLoad','ngCookies'])
     .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 
         var baseUrl='app';
-
         $urlRouterProvider.otherwise('analysis');
-
-        $stateProvider.state({
-            name: 'analysis',
-            url: '/analysis',
-            controller:'analysisCtrl as ctrl',
-            templateUrl:baseUrl+'/analysis/analysis.html',
-            resolve: {
-                loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad){
-                    return $ocLazyLoad.load(baseUrl+'/analysis/analysisCtrl.js');
-                }]
-            }
-        });
-
-        $stateProvider.state({
-            name: 'systemUser',
-            url: '/systemUser',
-            controller:'systemUserCtrl as ctrl',
-            templateUrl:baseUrl+'/systemUser/systemUser.html',
-            resolve: {
-                loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad){
-                    return $ocLazyLoad.load(baseUrl+'/systemUser/systemUserCtrl.js');
-                }]
-            }
-        });
-}]).controller("mainCtrl",function($scope,$http,$location,$window){
+        var Module=['analysis','systemUser','scenicSpot'];
+        for(var i=0;i<Module.length;i++){
+            $stateProvider.state({
+                name: Module[i],
+                url: '/'+Module[i],
+                controller:Module[i]+'Ctrl as ctrl',
+                templateUrl:baseUrl+'/'+Module[i]+'/'+Module[i]+'.html',
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad){
+                        var ctrl=this.templateUrl.split('.')[0]+'Ctrl.js';
+                        return $ocLazyLoad.load(ctrl);
+                    }]
+                }
+            });
+        }
+}]).controller("mainCtrl",function($scope,$http,$location,$cookies){
         var ctrl=this;
 
         $scope.$watch(function() {
@@ -39,24 +29,23 @@ angular.module('app',['ui.bootstrap','ui.router','oc.lazyLoad'])
             ctrl.path=newValue;
         });
 
-        $("#sideNav").click(function(){
-            if($(this).hasClass('closed')){
+        ctrl.changeSize=function($event){
+            if($($event.target).hasClass('closed')){
                 $('.navbar-side').animate({left: '0px'});
-                $(this).removeClass('closed');
+                $($event.target).removeClass('closed');
                 $('#page-wrapper').animate({'margin-left' : '260px'});
             }
             else{
-                $(this).addClass('closed');
+                $($event.target).addClass('closed');
                 $('.navbar-side').animate({left: '-260px'});
                 $('#page-wrapper').animate({'margin-left' : '0px'});
             }
-        });
+        };
 
-        $(window).resize(function(){
-            $('#page-wrapper').css({"height":window.innerHeight-60+"px"});
-            $scope.apply();
-        });
-
+        ctrl.loginOut=function(){
+            $cookies.remove("user");
+            window.location.href="login.html";
+        };
 
         $http({
             url:'data/sidebar/sidebar.json',

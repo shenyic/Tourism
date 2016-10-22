@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "angular-bootstrap": "^2.2.0",
-    "zTree": "^3.5.24"
+    "zTree": "^3.5.24",
+    "angular-cookies": "^1.5.8"
   }
 }
