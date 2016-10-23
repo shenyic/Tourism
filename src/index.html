@@ -13,6 +13,7 @@
     <link href="../vendor/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- Custom Styles-->
     <link href="../vendor/assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="../vendor/assets/css/info.css" rel="stylesheet" />
 
     <!-- JS Scripts-->
     <!-- jQuery Js -->
@@ -135,7 +136,7 @@
                         <i class="fa fa-user fa-fw"></i><span class="header-user">{{systemUser.realName}}</span><i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>我的信息</a>
+                        <li><a ui-sref="myInfo"><i class="fa fa-gear fa-fw"></i>我的信息</a>
                         </li>
                         <li class="divider"></li>
                         <li><a ng-click="ctrl.loginOut()"><i class="fa fa-sign-out fa-fw"></i>退出</a>

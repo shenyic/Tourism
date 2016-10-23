@@ -30,7 +30,6 @@ angular.module('app')
 			animation: true,
 			ariaLabelledBy: 'modal-title',
 			ariaDescribedBy: 'modal-body',
-			templateUrl: "app/systemUser/addSystemUser.html",
 			controller: 'ModalInstanceCtrl',
 			controllerAs: 'ctrl'
 		};

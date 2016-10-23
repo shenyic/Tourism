@@ -4,8 +4,8 @@ angular.module('app',['ui.bootstrap','ui.router','oc.lazyLoad','ngCookies'])
     .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 
         var baseUrl='app';
-        $urlRouterProvider.otherwise('analysis');
-        var Module=['analysis','systemUser','scenicSpot'];
+        $urlRouterProvider.otherwise('myInfo');
+        var Module=['analysis','systemUser','scenicSpot','myInfo'];
         for(var i=0;i<Module.length;i++){
             $stateProvider.state({
                 name: Module[i],
