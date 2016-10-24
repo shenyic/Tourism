@@ -7,10 +7,10 @@ jQuery(document).ready(function () {
 			((expiredays==null) ? "" : ";expires="+exdate.toGMTString()+";path=/")
 	}
 
-	$('.page-container form').submit(function () {
-		var target=this;
-		var username = $(this).find('.username').val();
-		var password = $(this).find('.password').val();
+	$('.page-container #submit').click(function () {
+		var target=$('.page-container form');
+		var username = $(target).find('.username').val();
+		var password = $(target).find('.password').val();
 		var success = false;
 		$.ajax({
 			url: "data/systemUser/systemUser.json",
@@ -26,7 +26,7 @@ jQuery(document).ready(function () {
 		});
 
 		if (success) {
-			return true;
+			window.location.href="index.html";
 		} else {
 			$(target).find('.error').fadeOut('fast', function () {
 				$(target).css('top', '27px');

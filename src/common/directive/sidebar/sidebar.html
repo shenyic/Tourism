@@ -1,0 +1,10 @@
+<nav class="navbar-default navbar-side" role="navigation">
+    <div id="sideNav" ng-click="changeSize($event)"><i class="fa fa-caret-right"></i></div>
+    <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
+            <li ng-repeat="item in list">
+                <a ng-class="{'active-menu':path=='/'+item.uiSref}" ui-sref="{{item.uiSref}}"><i class="fa {{item.icon}}"></i>{{item.name}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>

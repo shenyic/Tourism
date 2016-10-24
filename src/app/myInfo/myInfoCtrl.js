@@ -8,7 +8,8 @@ angular.module('app')
             animation: true,
             ariaLabelledBy: 'modal-title',
             ariaDescribedBy: 'modal-body',
-            controller: 'ModalInstanceCtrl',
+            controller: 'infoModalCtrl',
+            backdrop:"static",
             controllerAs: 'ctrl'
         };
         ctrl.doEdit=function(){
@@ -40,7 +41,7 @@ angular.module('app')
             ctrl.messages=response.data;
         });
 
-}]).controller('ModalInstanceCtrl', function ($uibModalInstance,result) {
+}]).controller('infoModalCtrl', function ($uibModalInstance,result) {
         var ctrl = this;
         ctrl.user=result.data;
 

@@ -482,8 +482,11 @@ color: #fff !important;
 	text-shadow:none;
 	
 }
+.sidebar-collapse > .nav > li > a[leave="first"] {
+    padding: 12px 12px;
+}
 .sidebar-collapse > .nav > li > a {
-	padding: 12px 10px;
+	padding: 12px 12px;
 }
 .sidebar-collapse > .nav > li {
 	border-bottom: 1px solid rgba(107, 108, 109, 0.19);

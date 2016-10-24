@@ -30,7 +30,7 @@ angular.module('app')
 			animation: true,
 			ariaLabelledBy: 'modal-title',
 			ariaDescribedBy: 'modal-body',
-			controller: 'ModalInstanceCtrl',
+			controller: 'systemUserModalCtrl',
 			controllerAs: 'ctrl'
 		};
 
@@ -47,7 +47,6 @@ angular.module('app')
 			modalInstance.result.then(function (selectedItem) {
 			}, function () {
 			});
-
 		};
 
 		ctrl.doEdit = function (user) {
@@ -104,7 +103,7 @@ angular.module('app')
 			});
 		};
 
-	}]).controller('ModalInstanceCtrl', function ($uibModalInstance,result) {
+	}]).controller('systemUserModalCtrl', function ($uibModalInstance,result) {
 		var ctrl = this;
 		if(angular.isUndefined(result.type)){
 			ctrl.power=result.data;

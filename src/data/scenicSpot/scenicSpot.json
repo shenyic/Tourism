@@ -1,0 +1,25 @@
+[
+  {
+    "id":"0",
+    "name":"奥体中心",
+    "level":"AA景区",
+    "type":[
+      {
+        "color":"blue",
+        "type":"休闲"
+      },
+      {
+        "color":"red",
+        "type":"健身"
+      }
+    ],
+    "originalPrice":"120",
+    "nowPrice":"100",
+    "address":"上海市浦东新区世博大道2095号",
+    "recommend":"这个景点很好玩",
+    "travelTime":"3月-4月",
+    "createTime":"2016-5-3",
+    "content":"",
+    "images":["images/0/xxx.jpg","images/0/xxx.jpg","images/0/xxx.jpg"]
+  }
+]

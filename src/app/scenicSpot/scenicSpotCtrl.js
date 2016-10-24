@@ -105,9 +105,9 @@ angular.module('app')
 			});
 		};*/
 
-	}]).controller('ModalInstanceCtrl', function ($uibModalInstance,result) {
+	}]);/*.controller('ModalInstanceCtrl', function ($uibModalInstance,result) {
 		var ctrl = this;
-		/*if(angular.isUndefined(result.type)){
+		/!*if(angular.isUndefined(result.type)){
 			ctrl.power=result.data;
 		}else if(result.type=="doEdit"){
 			ctrl.user=result.data;
@@ -122,5 +122,5 @@ angular.module('app')
 
 		ctrl.cancel = function () {
 			$uibModalInstance.dismiss('cancel');
-		};*/
-	});
+		};*!/
+	});*/
