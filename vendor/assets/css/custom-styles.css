@@ -63,6 +63,10 @@ p {
 .panel{
 border-radius:0px;
 }
+.table-center thead tr th{
+    vertical-align:middle;
+    text-align: center;
+}
 .navbar-side .nav > li > a > i{
 color: #1CC09F;
 padding: 8px;
@@ -614,6 +618,63 @@ font-size: 19px;
   overflow: hidden;
   margin: 14px;
 }
+}
+.scenicSpot{
+    position: relative;
+}
+.scenicSpot .name{
+    color: #333;
+    font-weight: 600;
+}
+.scenicSpot .level{
+    color: deeppink;
+    font-size: 14px;
+}
+.scenicSpot .address,
+.scenicSpot .types{
+    display: inline-block;
+    color: black;
+    margin-top: 15px;
+}
+.scenicSpot .address{
+    margin-top: 40px;
+}
+.scenicSpot .types .type{
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    width: 40px;
+    height: 20px;
+    margin-right: 5px;
+}
+.scenicSpot .reason{
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+}
+.scenicSpot .detail{
+    padding-top: 8px;
+    font-size: 14px;
+    color: #333;
+    line-height: 15px;
+}
+.scenicSpot .price-area{
+    font-size: 18px;
+    border-radius: 5px;
+    padding-top: 15px;
+    position: absolute;
+    right: 50px;
+    top:10px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    width: 150px;
+    height: 75px;
+    background-color: orange;
 }
 
 

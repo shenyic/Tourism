@@ -4,39 +4,55 @@ angular.module('app')
 	.controller('scenicSpotCtrl', ['$http', '$uibModal', function ($http, $uibModal) {
 		var ctrl = this;
 
-		/*ctrl.checked=false;
+		ctrl.checked=false;
 
 		$http({
-			url: 'data/systemUser/systemUser.json',
+			url: 'data/scenicSpot/scenicSpot.json',
 			method: 'get'
 		}).then(function (response) {
-			ctrl.systemUsers = response.data;
+			ctrl.scenicSpots = response.data;
 		});
 
 		ctrl.onCheck=function(){
 			if(ctrl.checked){
-				angular.forEach(ctrl.systemUsers,function(user){
-					user.checked=true;
+				angular.forEach(ctrl.scenicSpots,function(scenicSpot){
+					scenicSpot.checked=true;
 				});
 			}else{
-				angular.forEach(ctrl.systemUsers,function(user){
-					user.checked=false;
+				angular.forEach(ctrl.scenicSpots,function(scenicSpot){
+					scenicSpot.checked=false;
 				})
-
 			}
 		};
 
 		ctrl.myModal={
 			animation: true,
+			backdrop:"static",
 			ariaLabelledBy: 'modal-title',
 			ariaDescribedBy: 'modal-body',
-			templateUrl: "app/systemUser/addSystemUser.html",
-			controller: 'ModalInstanceCtrl',
+			controller: 'scenicSpotModalCtrl',
 			controllerAs: 'ctrl'
 		};
 
 
-		ctrl.doAdd = function () {
+		ctrl.look = function (scenicSpot) {
+			ctrl.myModal.templateUrl="app/scenicSpot/detail.html";
+			ctrl.myModal.size='lg';
+			ctrl.myModal.resolve={result:function(){
+				var result={};
+				result.type="look";
+				result.data=scenicSpot;
+				return result;
+			}};
+			var modalInstance = $uibModal.open(ctrl.myModal);
+			modalInstance.result.then(function (selectedItem) {
+			}, function () {
+			});
+
+		};
+
+
+		/*ctrl.doAdd = function () {
 			ctrl.myModal.templateUrl="app/systemUser/addSystemUser.html";
 			ctrl.myModal.resolve={result:function(){
 				var result={};
@@ -105,15 +121,59 @@ angular.module('app')
 			});
 		};*/
 
-	}]);/*.controller('ModalInstanceCtrl', function ($uibModalInstance,result) {
+	}]).controller('scenicSpotModalCtrl', function ($scope,$uibModalInstance,result) {
 		var ctrl = this;
-		/!*if(angular.isUndefined(result.type)){
+		if(result.type=="look"){
+			var currIndex = 0;
+			var url="data/scenicSpot/";
+
+			ctrl.scenicSpot=result.data;
+			ctrl.slides = [];
+			ctrl.addSlide = function(image) {
+				ctrl.slides.push({
+					image: url+image,
+					id: currIndex++
+				});
+			};
+
+			ctrl.show=function(address){
+				window.setTimeout(function(){
+					var map = new BMap.Map("container");
+					map.enableScrollWheelZoom(true);
+					map.centerAndZoom(address, 15);
+				},10);
+			};
+
+			for (var i = 0;i<ctrl.scenicSpot.images.length; i++) {
+				ctrl.addSlide(ctrl.scenicSpot.images[i]);
+			}
+		}
+		/*if(angular.isUndefined(result.type)){
 			ctrl.power=result.data;
 		}else if(result.type=="doEdit"){
 			ctrl.user=result.data;
 		}else if(result.type=="doDelete"){
 			ctrl.noCheckedUsers=result.data;
-		}
+		}*/
+
+		//var slides = $scope.slides = [];
+		//var currIndex = 0;
+
+		/*$scope.addSlide = function() {
+			var newWidth = 600 + slides.length + 1;
+			slides.push({
+				image: '//unsplash.it/' + newWidth + '/300',
+				text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
+				id: currIndex++
+			});
+		};
+
+		for (var i = 0; i < 4; i++) {
+			$scope.addSlide();
+		}*/
+
+		// Randomize logic below
+
 
 
 		ctrl.ok = function () {
@@ -122,5 +182,5 @@ angular.module('app')
 
 		ctrl.cancel = function () {
 			$uibModalInstance.dismiss('cancel');
-		};*!/
-	});*/
+		};
+	});

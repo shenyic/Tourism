@@ -2,18 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>湖州旅游后台管理系统</title>
     <!-- Bootstrap Styles-->
-    <link href="../vendor/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../vendor/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- FontAwesome Styles-->
-    <link href="../vendor/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="../vendor/assets/css/font-awesome.css" rel="stylesheet"/>
     <!-- Morris Chart Styles-->
-    <link href="../vendor/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="../vendor/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
     <!-- Custom Styles-->
-    <link href="../vendor/assets/css/custom-styles.css" rel="stylesheet" />
-    <link href="../vendor/assets/css/info.css" rel="stylesheet" />
+    <link href="../vendor/assets/css/custom-styles.css" rel="stylesheet"/>
 
     <!-- JS Scripts-->
     <!-- jQuery Js -->
@@ -29,6 +28,11 @@
     <link rel="stylesheet" href="../vendor/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
     <script type="text/javascript" src="../vendor/zTree/js/jquery.ztree.core.js"></script>
     <script type="text/javascript" src="../vendor/zTree/js/jquery.ztree.excheck.js"></script>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MraxujXpg5SBsEc5D93wDuGiVgl4d8WE">
+        //v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"
+        //v1.4版本及以前版本的引用方式：src="http://api.map.baidu.com/api?v=1.4&key=您的密钥&callback=initialize"
+    </script>
 
     <!--angular-->
     <script src="../vendor/angular/angular.js"></script>
@@ -46,14 +50,13 @@
 </head>
 
 <body ng-app="app">
-    <div id="wrapper">
-        <header></header>
-        <sidebar></sidebar>
-        <div id="page-wrapper">
-            <ui-view></ui-view>
-        </div>
+<div id="wrapper">
+    <header></header>
+    <sidebar></sidebar>
+    <div id="page-wrapper">
+        <ui-view></ui-view>
     </div>
+</div>
 
 </body>
-
 </html>

@@ -1,25 +1,137 @@
 [
   {
-    "id":"0",
-    "name":"奥体中心",
-    "level":"AA景区",
-    "type":[
+    "id": "0",
+    "name": "莫干山",
+    "level": "AAAA景区",
+    "types": [
       {
-        "color":"blue",
-        "type":"休闲"
+        "color": "blue",
+        "type": "休闲"
       },
       {
-        "color":"red",
-        "type":"健身"
+        "color": "red",
+        "type": "观光"
       }
     ],
-    "originalPrice":"120",
-    "nowPrice":"100",
-    "address":"上海市浦东新区世博大道2095号",
-    "recommend":"这个景点很好玩",
-    "travelTime":"3月-4月",
-    "createTime":"2016-5-3",
-    "content":"",
-    "images":["images/0/xxx.jpg","images/0/xxx.jpg","images/0/xxx.jpg"]
+    "originalPrice": "80",
+    "nowPrice": "80",
+    "address": "浙江省湖州市德清莫干山风景名胜区97号",
+    "recommend": "这个景点可以让你体会大自然的风光",
+    "travelTime": "1月-12月",
+    "createTime": "1995-5-3",
+    "content": "",
+    "images": [
+      "images/0/01.jpg",
+      "images/0/02.jpg",
+      "images/0/03.jpg"
+    ]
+  },
+  {
+    "id": "1",
+    "name": "南浔古镇",
+    "level": "AAAAA景区",
+    "types": [
+      {
+        "color": "bule",
+        "type": "休闲"
+      },
+      {
+        "color": "green",
+        "type": "观光"
+      }
+    ],
+    "originalPrice": "65",
+    "nowPrice": "100",
+    "address": "浙江省湖州市南浔区人瑞路51号",
+    "recommend": "这个景点可以让人体会这个美丽的房屋建筑群",
+    "travelTime": "1月-12月",
+    "createTime": "2015-7",
+    "content": "",
+    "images": [
+      "images/1/04.jpg",
+      "images/1/05.jpg",
+      "images/1/06.jpg"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "太湖旅游度假区",
+    "level": "AAAAA景区",
+    "types": [
+      {
+        "color": "white",
+        "type": "度假"
+      },
+      {
+        "color": "blue",
+        "type": "观光"
+      }
+    ],
+    "originalPrice": "0",
+    "nowPrice": "0",
+    "address": "浙江省湖州市吴兴区太湖南岸，弁山东麓，大钱港以西",
+    "recommend": "这个景点风光秀丽，令人向往",
+    "travelTime": "1月-12月",
+    "createTime": "2015-10-10",
+    "content": "",
+    "images": [
+      "images/2/07.jpg",
+      "images/2/08.jpg",
+      "images/2/09.jpg"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "天下银坑",
+    "level": "AAAA景区",
+    "types": [
+      {
+        "color": "blue",
+        "type": "休闲"
+      },
+      {
+        "color": "white",
+        "type": "观光"
+      }
+    ],
+    "originalPrice": "20",
+    "nowPrice": "40",
+    "address": "浙江省湖州市安吉县天荒坪镇银坑村",
+    "recommend": "这个景点竹林密布，一片绿海，让人心驰神往",
+    "travelTime": "1月-12月",
+    "createTime": "2013-6-8",
+    "content": "",
+    "images": [
+      "images/3/10.jpg",
+      "images/3/3/11.jpg",
+      "images/3/12.jpg"
+    ]
+  },
+  {
+    "id": "4",
+    "name": "藏龙百瀑景区",
+    "level": "AAAA景区",
+    "types": [
+      {
+        "color": "blue",
+        "type": "休闲"
+      },
+      {
+        "color": "red",
+        "type": "观光"
+      }
+    ],
+    "originalPrice": "35",
+    "nowPrice": "48",
+    "address": "浙江省湖州市安吉县S205",
+    "recommend": "这个景点是浙江最大瀑布群",
+    "travelTime": "3月-8月",
+    "createTime": "2013-5-12",
+    "content": "",
+    "images": [
+      "images/4/13.jpg",
+      "images/4/14.jpg",
+      "images/4/15.jpg"
+    ]
   }
 ]
