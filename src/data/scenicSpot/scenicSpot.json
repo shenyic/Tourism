@@ -14,7 +14,7 @@
       }
     ],
     "originalPrice": "80",
-    "nowPrice": "80",
+    "nowPrice": "60",
     "address": "浙江省湖州市德清莫干山风景名胜区97号",
     "recommend": "这个景点可以让你体会大自然的风光",
     "travelTime": "1月-12月",
@@ -40,8 +40,8 @@
         "type": "观光"
       }
     ],
-    "originalPrice": "65",
-    "nowPrice": "100",
+    "originalPrice": "100",
+    "nowPrice": "80",
     "address": "浙江省湖州市南浔区人瑞路51号",
     "recommend": "这个景点可以让人体会这个美丽的房屋建筑群",
     "travelTime": "1月-12月",
@@ -67,12 +67,12 @@
         "type": "观光"
       }
     ],
-    "originalPrice": "0",
-    "nowPrice": "0",
-    "address": "浙江省湖州市吴兴区太湖南岸，弁山东麓，大钱港以西",
+    "originalPrice": "20",
+    "nowPrice": "15",
+    "address": "浙江省湖州市吴兴区太湖旅游度假区",
     "recommend": "这个景点风光秀丽，令人向往",
     "travelTime": "1月-12月",
-    "createTime": "2015-10-10",
+    "createTime": "1995-10-10",
     "content": "",
     "images": [
       "images/2/07.jpg",
@@ -94,16 +94,16 @@
         "type": "观光"
       }
     ],
-    "originalPrice": "20",
-    "nowPrice": "40",
-    "address": "浙江省湖州市安吉县天荒坪镇银坑村",
+    "originalPrice": "40",
+    "nowPrice": "30",
+    "address": "浙江省湖州市安吉县天荒坪镇银坑景区",
     "recommend": "这个景点竹林密布，一片绿海，让人心驰神往",
     "travelTime": "1月-12月",
     "createTime": "2013-6-8",
     "content": "",
     "images": [
       "images/3/10.jpg",
-      "images/3/3/11.jpg",
+      "images/3/11.jpg",
       "images/3/12.jpg"
     ]
   },
@@ -121,8 +121,8 @@
         "type": "观光"
       }
     ],
-    "originalPrice": "35",
-    "nowPrice": "48",
+    "originalPrice": "40",
+    "nowPrice": "35",
     "address": "浙江省湖州市安吉县S205",
     "recommend": "这个景点是浙江最大瀑布群",
     "travelTime": "3月-8月",

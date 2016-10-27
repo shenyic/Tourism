@@ -1,10 +1,11 @@
 "use strict";
 
-angular.module('app')
-	.controller('scenicSpotCtrl', ['$http', '$uibModal', function ($http, $uibModal) {
+angular.module('app',['ui.select2'])
+	.controller('scenicSpotCtrl', ['$http', '$uibModal','$ocLazyLoad', function ($http, $uibModal,$ocLazyLoad) {
 		var ctrl = this;
 
 		ctrl.checked=false;
+
 
 		$http({
 			url: 'data/scenicSpot/scenicSpot.json',
@@ -44,16 +45,12 @@ angular.module('app')
 				result.data=scenicSpot;
 				return result;
 			}};
-			var modalInstance = $uibModal.open(ctrl.myModal);
-			modalInstance.result.then(function (selectedItem) {
-			}, function () {
-			});
-
+			$uibModal.open(ctrl.myModal);
 		};
 
-
-		/*ctrl.doAdd = function () {
-			ctrl.myModal.templateUrl="app/systemUser/addSystemUser.html";
+		ctrl.doAdd = function () {
+			ctrl.myModal.templateUrl="app/scenicSpot/addScenicSpot.html";
+			ctrl.myModal.size='lg';
 			ctrl.myModal.resolve={result:function(){
 				var result={};
 				result.type="doAdd";
@@ -64,8 +61,32 @@ angular.module('app')
 			modalInstance.result.then(function (selectedItem) {
 			}, function () {
 			});
-
 		};
+
+		/*ctrl.doDelete = function () {
+			var noCheckedUsers=[];
+			angular.forEach(ctrl.systemUsers,function(user){
+				if(!user.checked){
+					noCheckedUsers.push(user);
+				}
+			});
+			if(noCheckedUsers.length==ctrl.systemUsers.length)return;
+			ctrl.myModal.templateUrl="app/systemUser/deleteSystemUser.html";
+			ctrl.myModal.resolve={result:function(){
+				var result={};
+				result.type="doDelete";
+				result.data=noCheckedUsers;
+				return result;
+			}};
+			var modalInstance = $uibModal.open(ctrl.myModal);
+			modalInstance.result.then(function (response) {
+				ctrl.systemUsers=response.noCheckedUsers;
+			}, function () {
+			});
+		};*/
+
+
+		/*
 
 		ctrl.doEdit = function (user) {
 			ctrl.myModal.templateUrl="app/systemUser/editSystemUser.html";
@@ -99,27 +120,7 @@ angular.module('app')
 			});
 		};
 
-		ctrl.doDelete = function () {
-			var noCheckedUsers=[];
-			angular.forEach(ctrl.systemUsers,function(user){
-				if(!user.checked){
-					noCheckedUsers.push(user);
-				}
-			});
-			if(noCheckedUsers.length==ctrl.systemUsers.length)return;
-			ctrl.myModal.templateUrl="app/systemUser/deleteSystemUser.html";
-			ctrl.myModal.resolve={result:function(){
-				var result={};
-				result.type="doDelete";
-				result.data=noCheckedUsers;
-				return result;
-			}};
-			var modalInstance = $uibModal.open(ctrl.myModal);
-			modalInstance.result.then(function (response) {
-				ctrl.systemUsers=response.noCheckedUsers;
-			}, function () {
-			});
-		};*/
+		*/
 
 	}]).controller('scenicSpotModalCtrl', function ($scope,$uibModalInstance,result) {
 		var ctrl = this;
@@ -143,10 +144,11 @@ angular.module('app')
 					map.centerAndZoom(address, 15);
 				},10);
 			};
-
 			for (var i = 0;i<ctrl.scenicSpot.images.length; i++) {
 				ctrl.addSlide(ctrl.scenicSpot.images[i]);
 			}
+		}else if(result.type=="doAdd"){
+			ctrl.months=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
 		}
 		/*if(angular.isUndefined(result.type)){
 			ctrl.power=result.data;

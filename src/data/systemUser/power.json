@@ -32,5 +32,37 @@
     "id": 24,
     "pId": 2,
     "name": "授予用户权限"
+  },
+  {
+    "id": 3,
+    "pId": 0,
+    "name": "景区管理",
+    "open": true,
+    "icon": "../vendor/zTree/css/zTreeStyle/img/diy/1_open.png"
+  },
+  {
+    "id": 31,
+    "pId": 3,
+    "name": "添加景区"
+  },
+  {
+    "id": 32,
+    "pId": 3,
+    "name": "编辑景区"
+  },
+  {
+    "id": 33,
+    "pId": 3,
+    "name": "删除景区"
+  },
+  {
+    "id": 34,
+    "pId": 3,
+    "name": "景区详情查看"
+  },
+  {
+    "id": 35,
+    "pId": 3,
+    "name": "景区位置查看"
   }
 ]
