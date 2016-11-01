@@ -1,0 +1,15 @@
+[{
+  "orderId":"L160330923",
+  "userId":"1",
+  "orderContent":"莫干山+南浔古镇",
+  "totalMoney":5000,
+  "state":"已付款",
+  "orderTime":"2016-11-02 08:47:10",
+  "detail":{
+    "ticket":[
+      {"count":2, "place":"莫干山", "price":60},
+      {"count":4, "place":"南浔古镇", "price":80}
+    ],
+    "way":"支付宝"
+  }
+}]

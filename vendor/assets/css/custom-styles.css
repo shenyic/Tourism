@@ -48,6 +48,9 @@ h2 {
 h4 {
     padding-top:10px;
 }
+.table-striped>tbody>tr.table-back:nth-of-type(odd){
+    background-color: white;
+}
 .square-btn-adjust {
     border: 0px solid transparent; 
    -webkit-border-radius: 0px;

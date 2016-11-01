@@ -1,17 +1,25 @@
 "use strict";
 
 angular.module('app')
-	.controller('systemUserCtrl', ['$http', '$uibModal', function ($http, $uibModal) {
+	.controller('userCtrl', ['$http', '$uibModal', function ($http, $uibModal) {
 		var ctrl = this;
 
 		ctrl.checked=false;
 
 		$http({
-			url: 'data/systemUser/systemUser.json',
-			method: 'get'
-		}).then(function (response) {
-			ctrl.systemUsers = response.data;
+			url:'data/user/user.json',
+			method:'get'
+		}).then(function(response){
+			ctrl.data=response.data.users;
+			ctrl.currentPage=1;
+			ctrl.pageSize=response.data.pageSize;
+			ctrl.numPages=response.data.numPages;
+			ctrl.users=ctrl.data.slice(0,ctrl.pageSize);
 		});
+
+		ctrl.selectPage=function(page){
+			ctrl.users=ctrl.data.slice((page-1)*ctrl.pageSize,(page-1)*ctrl.pageSize+ctrl.pageSize);
+		};
 
 		ctrl.onCheck=function(){
 			if(ctrl.checked){
@@ -22,7 +30,6 @@ angular.module('app')
 				angular.forEach(ctrl.systemUsers,function(user){
 					user.checked=false;
 				})
-
 			}
 		};
 

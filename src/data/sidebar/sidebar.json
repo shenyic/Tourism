@@ -2,22 +2,22 @@
   {
     "name":"系统用户管理",
     "uiSref":"systemUser",
-    "icon":"fa-desktop"
+    "icon":"fa-user"
   },
   {
     "name":"日志管理",
     "uiSref":"log",
-    "icon":"fa-desktop"
+    "icon":"fa-book"
   },
   {
     "name":"景点管理",
     "uiSref":"scenicSpot",
-    "icon":"fa-desktop"
+    "icon":"fa-picture-o"
   },
   {
-    "name":"用户管理",
+    "name":"会员管理",
     "uiSref":"user",
-    "icon":"fa-desktop"
+    "icon":"fa-users"
   },
   {
     "name":"订单管理",
@@ -27,7 +27,7 @@
   {
     "name":"新闻管理",
     "uiSref":"news",
-    "icon":"fa-desktop"
+    "icon":"fa-bars"
   },
   {
     "name":"统计分析",

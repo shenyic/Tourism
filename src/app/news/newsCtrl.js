@@ -1,29 +1,37 @@
 "use strict";
 
 angular.module('app')
-	.controller('systemUserCtrl', ['$http', '$uibModal', function ($http, $uibModal) {
+	.controller('newsCtrl', ['$scope','$http', '$uibModal', function ($scope,$http, $uibModal) {
 		var ctrl = this;
 
 		ctrl.checked=false;
 
 		$http({
-			url: 'data/systemUser/systemUser.json',
+			url: 'data/news/news.json',
 			method: 'get'
 		}).then(function (response) {
-			ctrl.systemUsers = response.data;
+			ctrl.news = response.data;
 		});
 
 		ctrl.onCheck=function(){
 			if(ctrl.checked){
-				angular.forEach(ctrl.systemUsers,function(user){
-					user.checked=true;
+				angular.forEach(ctrl.news,function(item){
+					item.checked=true;
 				});
 			}else{
-				angular.forEach(ctrl.systemUsers,function(user){
-					user.checked=false;
+				angular.forEach(ctrl.news,function(item){
+					item.checked=false;
 				})
 
 			}
+		};
+
+		ctrl.toggleSelected=function(item){
+			item.selected=!item.selected;
+		};
+
+		ctrl.isSelected=function(){
+			return $scope.selected;
 		};
 
 		ctrl.myModal={
