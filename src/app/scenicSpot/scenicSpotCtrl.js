@@ -6,7 +6,6 @@ angular.module('app',['ui.select2'])
 
 		ctrl.checked=false;
 
-
 		$http({
 			url: 'data/scenicSpot/scenicSpot.json',
 			method: 'get'
@@ -49,85 +48,101 @@ angular.module('app',['ui.select2'])
 		};
 
 		ctrl.doAdd = function () {
-			ctrl.myModal.templateUrl="app/scenicSpot/addScenicSpot.html";
+			ctrl.myModal.templateUrl="app/scenicSpot/addScenicSpotOne.html";
 			ctrl.myModal.size='lg';
 			ctrl.myModal.resolve={result:function(){
 				var result={};
-				result.type="doAdd";
+				result.type="doAddOne";
 				return result;
 			}};
 			var modalInstance = $uibModal.open(ctrl.myModal);
 
-			modalInstance.result.then(function (selectedItem) {
-			}, function () {
+			modalInstance.result.then(function (response){
+				ctrl.myModal.templateUrl="app/scenicSpot/addScenicSpotTwo.html";
+				ctrl.myModal.size='lg';
+				ctrl.myModal.resolve={result:function(){
+					var result={};
+					result.data=response;
+					result.type="doAddTwo";
+					return result;
+				}};
+				var modalInstance = $uibModal.open(ctrl.myModal);
+				return modalInstance.result
+			}).then(function (response){
+				if(response.todo=="addOne"){
+					ctrl.doAdd();
+				}
 			});
 		};
 
-		/*ctrl.doDelete = function () {
-			var noCheckedUsers=[];
-			angular.forEach(ctrl.systemUsers,function(user){
-				if(!user.checked){
-					noCheckedUsers.push(user);
+		ctrl.doDelete = function () {
+			var noCheckedscenicSpots=[];
+			angular.forEach(ctrl.scenicSpots,function(scenicSpot){
+				if(!scenicSpot.checked){
+					noCheckedscenicSpots.push(scenicSpot);
 				}
 			});
-			if(noCheckedUsers.length==ctrl.systemUsers.length)return;
-			ctrl.myModal.templateUrl="app/systemUser/deleteSystemUser.html";
+			if(noCheckedscenicSpots.length==ctrl.scenicSpots.length)return;
+			ctrl.myModal.templateUrl="app/scenicSpot/deleteScenicSpot.html";
 			ctrl.myModal.resolve={result:function(){
 				var result={};
 				result.type="doDelete";
-				result.data=noCheckedUsers;
+				result.data=noCheckedscenicSpots;
 				return result;
 			}};
 			var modalInstance = $uibModal.open(ctrl.myModal);
 			modalInstance.result.then(function (response) {
-				ctrl.systemUsers=response.noCheckedUsers;
-			}, function () {
+				ctrl.scenicSpots=response.noCheckedscenicSpots;
 			});
-		};*/
+		};
 
 
-		/*
 
-		ctrl.doEdit = function (user) {
-			ctrl.myModal.templateUrl="app/systemUser/editSystemUser.html";
+
+		ctrl.doEdit = function (scenicSpot) {
+			ctrl.doAdd();
+		};
+
+		ctrl.site = function (address) {
+			ctrl.myModal.templateUrl="app/scenicSpot/siteScenicSpot.html";
+			ctrl.myModal.size='lg';
 			ctrl.myModal.resolve={result:function(){
 				var result={};
-				result.type="doEdit";
-				result.data=user;
+				result.type="site";
+				result.address=address;
 				return result;
 			}};
-
-			var modalInstance = $uibModal.open(ctrl.myModal);
-			modalInstance.result.then(function (selectedItem) {
-			}, function () {
-			});
+			$uibModal.open(ctrl.myModal);
 		};
 
-		ctrl.doGive = function () {
-			ctrl.myModal.templateUrl="app/systemUser/giveSystemUser.html";
-			ctrl.myModal.seze='sm';
-			ctrl.myModal.resolve={result:function(){
-				return $http({
-					url: 'data/systemUser/power.json',
-					method: 'get'
-				});
-			}};
-			var modalInstance = $uibModal.open(ctrl.myModal);
-			modalInstance.result.then(function (response) {
-
-			}, function () {
-
-			});
-		};
-
-		*/
 
 	}]).controller('scenicSpotModalCtrl', function ($scope,$uibModalInstance,result) {
 		var ctrl = this;
+
+		ctrl.show=function(address){
+			window.setTimeout(function(){
+				var map = new BMap.Map("container");
+				map.enableScrollWheelZoom(true);
+				map.centerAndZoom(address, 15);
+			},10);
+		};
+
+		ctrl.ok = function (todo) {
+			if(todo=='addOne') {
+				ctrl.todo='addOne';
+			}else if(todo=='addTwo'){
+				ctrl.todo='addTwo';
+			}
+			$uibModalInstance.close(ctrl);
+		};
+
+		ctrl.cancel = function () {
+			$uibModalInstance.dismiss('cancel');
+		};
+
 		if(result.type=="look"){
 			var currIndex = 0;
 			var url="data/scenicSpot/";
-
 			ctrl.scenicSpot=result.data;
 			ctrl.slides = [];
 			ctrl.addSlide = function(image) {
@@ -137,52 +152,18 @@ angular.module('app',['ui.select2'])
 				});
 			};
 
-			ctrl.show=function(address){
-				window.setTimeout(function(){
-					var map = new BMap.Map("container");
-					map.enableScrollWheelZoom(true);
-					map.centerAndZoom(address, 15);
-				},10);
-			};
 			for (var i = 0;i<ctrl.scenicSpot.images.length; i++) {
 				ctrl.addSlide(ctrl.scenicSpot.images[i]);
 			}
-		}else if(result.type=="doAdd"){
+		}else if(result.type=="doAddOne"){
 			ctrl.months=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-		}
-		/*if(angular.isUndefined(result.type)){
-			ctrl.power=result.data;
-		}else if(result.type=="doEdit"){
-			ctrl.user=result.data;
+		}else if(result.type=="doAddTwo"){
+
 		}else if(result.type=="doDelete"){
-			ctrl.noCheckedUsers=result.data;
-		}*/
-
-		//var slides = $scope.slides = [];
-		//var currIndex = 0;
-
-		/*$scope.addSlide = function() {
-			var newWidth = 600 + slides.length + 1;
-			slides.push({
-				image: '//unsplash.it/' + newWidth + '/300',
-				text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
-				id: currIndex++
-			});
-		};
-
-		for (var i = 0; i < 4; i++) {
-			$scope.addSlide();
-		}*/
-
-		// Randomize logic below
+			ctrl.noCheckedscenicSpots=result.data;
+		}else if(result.type=="site"){
+			ctrl.show(result.address);
+		}
 
 
-
-		ctrl.ok = function () {
-			$uibModalInstance.close(ctrl);
-		};
-
-		ctrl.cancel = function () {
-			$uibModalInstance.dismiss('cancel');
-		};
 	});

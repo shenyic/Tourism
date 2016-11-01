@@ -55,11 +55,6 @@ h4 {
 border-radius: 0px;
 
 }
-p {
-    font-size:16px;
-    line-height:25px;
-    padding-top:20px;
-}
 .panel{
 border-radius:0px;
 }
@@ -184,7 +179,6 @@ color: #8A8A8A;
 color: #000;
 border-color: #FFF;
 font-weight:bold;
-background: #FFFFFF;
 font-size: 16px;
 }
 .panel-heading {

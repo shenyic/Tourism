@@ -32,11 +32,11 @@
     "level": "AAAAA景区",
     "types": [
       {
-        "color": "bule",
+        "color": "blue",
         "type": "休闲"
       },
       {
-        "color": "green",
+        "color": "red",
         "type": "观光"
       }
     ],
@@ -59,11 +59,11 @@
     "level": "AAAAA景区",
     "types": [
       {
-        "color": "white",
+        "color": "green",
         "type": "度假"
       },
       {
-        "color": "blue",
+        "color": "red",
         "type": "观光"
       }
     ],
@@ -90,7 +90,7 @@
         "type": "休闲"
       },
       {
-        "color": "white",
+        "color": "red",
         "type": "观光"
       }
     ],
