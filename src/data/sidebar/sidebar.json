@@ -5,8 +5,28 @@
     "icon":"fa-desktop"
   },
   {
+    "name":"日志管理",
+    "uiSref":"log",
+    "icon":"fa-desktop"
+  },
+  {
     "name":"景点管理",
     "uiSref":"scenicSpot",
+    "icon":"fa-desktop"
+  },
+  {
+    "name":"用户管理",
+    "uiSref":"user",
+    "icon":"fa-desktop"
+  },
+  {
+    "name":"订单管理",
+    "uiSref":"order",
+    "icon":"fa-desktop"
+  },
+  {
+    "name":"新闻管理",
+    "uiSref":"news",
     "icon":"fa-desktop"
   },
   {
