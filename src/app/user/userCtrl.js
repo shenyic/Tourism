@@ -23,11 +23,11 @@ angular.module('app')
 
 		ctrl.onCheck=function(){
 			if(ctrl.checked){
-				angular.forEach(ctrl.systemUsers,function(user){
+				angular.forEach(ctrl.users,function(user){
 					user.checked=true;
 				});
 			}else{
-				angular.forEach(ctrl.systemUsers,function(user){
+				angular.forEach(ctrl.users,function(user){
 					user.checked=false;
 				})
 			}

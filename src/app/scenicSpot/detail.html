@@ -68,7 +68,7 @@
     <div class="row">
         <div class="col-md-12">
             <uib-tabset>
-                <uib-tab index="0" heading="景点介绍">{{ctrl.scenicSpot.content}}</uib-tab>
+                <uib-tab index="0" heading="景点介绍"><div ng-bind-html="ctrl.scenicSpot.content"></div></uib-tab>
                 <uib-tab index="1" heading="景点图片">
                     <div style="float: left" ng-repeat="slide in ctrl.slides">
                         <img ng-src={{slide.image}}>
@@ -78,7 +78,17 @@
                 <uib-tab index="2" heading="交通地图" select="ctrl.show(ctrl.scenicSpot.address)">
                     <div id="container" style="height: 400px;width: 80%;margin: 20px auto"></div>
                 </uib-tab>
-                <uib-tab index="3" heading="购票须知">Static content</uib-tab>
+                <uib-tab index="3" heading="购票须知">
+                    <p style="padding:20px 0 0 20px;font-weight: 700">
+                        1.门票当天有效，出园需入园，需再次购票。<br>
+                        2.为保证取票、入园顺利，预订时请务必填写真实姓名、手机号码等信息。<br>
+                        3.有效期限：（有效期内，仅限入园1次）指定游玩日当天内有效。<br>
+                        4.取票时间：07：:0-16:00。<br>
+                        5.单笔预定只接受20人以内订单，如超过20人请分批订购。<br>
+                        6.如果要预订明天游玩的门票，务必要在当天晚上12点前支付完成。<br>
+                        7.支付完成后如果在一小时内没有收到凭证号的游客，请及时联系我们客服 。<br>
+                    </p>
+                </uib-tab>
             </uib-tabset>
         </div>
     </div>

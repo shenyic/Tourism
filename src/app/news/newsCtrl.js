@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('app')
-	.controller('newsCtrl', ['$scope','$http', '$uibModal', function ($scope,$http, $uibModal) {
+	.controller('newsCtrl', ['$scope','$http', '$uibModal','$sce', function ($scope,$http, $uibModal,$sce) {
 		var ctrl = this;
 
 		ctrl.checked=false;
@@ -11,6 +11,9 @@ angular.module('app')
 			method: 'get'
 		}).then(function (response) {
 			ctrl.news = response.data;
+			angular.forEach(ctrl.news,function(item){
+				item.newsContent= $sce.trustAsHtml(item.newsContent);
+			});
 		});
 
 		ctrl.onCheck=function(){

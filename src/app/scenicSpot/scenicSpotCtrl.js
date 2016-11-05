@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('app',['ui.select2'])
-	.controller('scenicSpotCtrl', ['$http', '$uibModal','$ocLazyLoad', function ($http, $uibModal,$ocLazyLoad) {
+	.controller('scenicSpotCtrl', ['$http', '$uibModal','$ocLazyLoad','$sce', function ($http, $uibModal,$ocLazyLoad,$sce) {
 		var ctrl = this;
 
 		ctrl.checked=false;
@@ -11,6 +11,10 @@ angular.module('app',['ui.select2'])
 			method: 'get'
 		}).then(function (response) {
 			ctrl.scenicSpots = response.data;
+			angular.forEach(ctrl.scenicSpots,function(scenicSpot){
+				scenicSpot.content = $sce.trustAsHtml(scenicSpot.content);
+			});
+
 		});
 
 		ctrl.onCheck=function(){
@@ -116,7 +120,7 @@ angular.module('app',['ui.select2'])
 		};
 
 
-	}]).controller('scenicSpotModalCtrl', function ($scope,$uibModalInstance,result) {
+	}]).controller('scenicSpotModalCtrl', function ($scope,$uibModalInstance,result,$sce) {
 		var ctrl = this;
 
 		ctrl.show=function(address){
@@ -143,7 +147,9 @@ angular.module('app',['ui.select2'])
 		if(result.type=="look"){
 			var currIndex = 0;
 			var url="data/scenicSpot/";
+
 			ctrl.scenicSpot=result.data;
+
 			ctrl.slides = [];
 			ctrl.addSlide = function(image) {
 				ctrl.slides.push({

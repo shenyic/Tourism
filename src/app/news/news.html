@@ -58,7 +58,7 @@
                             <tr ng-show="item.selected">
                                 <td colspan="6">
                                     <h3 align="center" class="page-header">{{item.newsTitle}}</h3>
-                                    <div style="width: 90%;margin: 0 auto;">{{item.newsContent}}</div>
+                                    <div style="width: 90%;margin: 0 auto;" ng-bind-html="item.newsContent"></div>
                                 </td>
                             </tr>
                             </tbody>

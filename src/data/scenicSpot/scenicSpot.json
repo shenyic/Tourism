@@ -19,7 +19,7 @@
     "recommend": "这个景点可以让你体会大自然的风光",
     "travelTime": "1月-12月",
     "createTime": "1995-5-3",
-    "content": "",
+    "content": "<h1><img src='http://i1.hexunimg.cn/2014-08-15/167580248.jpg' style='width: 358px;'><b>这个景点很牛逼</b></h1>",
     "images": [
       "images/0/01.jpg",
       "images/0/02.jpg",
@@ -46,7 +46,7 @@
     "recommend": "这个景点可以让人体会这个美丽的房屋建筑群",
     "travelTime": "1月-12月",
     "createTime": "2015-7",
-    "content": "",
+    "content": "<h1><img src='http://i1.hexunimg.cn/2014-08-15/167580248.jpg' style='width: 358px;'><b>这个景点很牛逼</b></h1>",
     "images": [
       "images/1/04.jpg",
       "images/1/05.jpg",
