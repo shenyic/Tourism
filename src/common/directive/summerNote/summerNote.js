@@ -12,7 +12,8 @@ angular.module('app')
                 });
 
                 scope.$watch(function(){return ngModel.$modelValue;},function(){
-                    ele.summernote('code', ngModel.$modelValue);
+                    var str=ngModel.$modelValue.toString();
+                    ele.summernote('code',str );
                 })
             }
         }

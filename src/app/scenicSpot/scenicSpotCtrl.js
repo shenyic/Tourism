@@ -120,7 +120,7 @@ angular.module('app',['ui.select2'])
 		};
 
 
-	}]).controller('scenicSpotModalCtrl', function ($scope,$uibModalInstance,result,$sce) {
+	}]).controller('scenicSpotModalCtrl', function ($scope,$uibModalInstance,result) {
 		var ctrl = this;
 
 		ctrl.show=function(address){
