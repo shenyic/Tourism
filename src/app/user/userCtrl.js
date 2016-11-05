@@ -41,62 +41,35 @@ angular.module('app')
 			controllerAs: 'ctrl'
 		};
 
-
-		ctrl.doAdd = function () {
-			ctrl.myModal.templateUrl="app/systemUser/addSystemUser.html";
-			ctrl.myModal.resolve={result:function(){
-				var result={};
-				result.type="doAdd";
-				return result;
-			}};
-			var modalInstance = $uibModal.open(ctrl.myModal);
-
-			modalInstance.result.then(function (selectedItem) {
-			}, function () {
-			});
-		};
-
 		ctrl.doEdit = function (user) {
-			ctrl.myModal.templateUrl="app/systemUser/editSystemUser.html";
+			ctrl.myModal.templateUrl="app/user/editUser.html";
 			ctrl.myModal.resolve={result:function(){
 				var result={};
 				result.type="doEdit";
 				result.data=user;
 				return result;
 			}};
-
-			var modalInstance = $uibModal.open(ctrl.myModal);
-			modalInstance.result.then(function (selectedItem) {
-			}, function () {
-			});
+			$uibModal.open(ctrl.myModal);
 		};
 
-		ctrl.doGive = function () {
-			ctrl.myModal.templateUrl="app/systemUser/giveSystemUser.html";
-			ctrl.myModal.seze='sm';
+		ctrl.doPush=function(){
+			ctrl.myModal.templateUrl="app/user/pushToUser.html";
 			ctrl.myModal.resolve={result:function(){
-				return $http({
-					url: 'data/systemUser/power.json',
-					method: 'get'
-				});
+				var result={};
+				return result;
 			}};
-			var modalInstance = $uibModal.open(ctrl.myModal);
-			modalInstance.result.then(function (response) {
-
-			}, function () {
-
-			});
+			$uibModal.open(ctrl.myModal);
 		};
 
 		ctrl.doDelete = function () {
 			var noCheckedUsers=[];
-			angular.forEach(ctrl.systemUsers,function(user){
+			angular.forEach(ctrl.users,function(user){
 				if(!user.checked){
 					noCheckedUsers.push(user);
 				}
 			});
-			if(noCheckedUsers.length==ctrl.systemUsers.length)return;
-			ctrl.myModal.templateUrl="app/systemUser/deleteSystemUser.html";
+			if(noCheckedUsers.length==ctrl.users.length)return;
+			ctrl.myModal.templateUrl="app/user/deleteUser.html";
 			ctrl.myModal.resolve={result:function(){
 				var result={};
 				result.type="doDelete";
@@ -105,16 +78,14 @@ angular.module('app')
 			}};
 			var modalInstance = $uibModal.open(ctrl.myModal);
 			modalInstance.result.then(function (response) {
-				ctrl.systemUsers=response.noCheckedUsers;
+				ctrl.users=response.noCheckedUsers;
 			}, function () {
 			});
 		};
 
 	}]).controller('systemUserModalCtrl', function ($uibModalInstance,result) {
 		var ctrl = this;
-		if(angular.isUndefined(result.type)){
-			ctrl.power=result.data;
-		}else if(result.type=="doEdit"){
+		if(result.type=="doEdit"){
 			ctrl.user=result.data;
 		}else if(result.type=="doDelete"){
 			ctrl.noCheckedUsers=result.data;
