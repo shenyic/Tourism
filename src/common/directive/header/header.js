@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('app')
-    .directive('header',function($cookies){
+    .directive('header',function($cookies,$http){
         return {
             restrict:'AE',
             templateUrl:'common/directive/header/header.html',
@@ -11,6 +11,12 @@ angular.module('app')
                     $cookies.remove("user");
                     window.location.href="login.html";
                 };
+                $http({
+                    url:'data/myInfo/messages.json',
+                    method:'get'
+                }).then(function(response){
+                    scope.messages=response.data;
+                });
             }
         }
     });
