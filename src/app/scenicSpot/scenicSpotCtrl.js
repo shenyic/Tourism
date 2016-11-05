@@ -147,9 +147,7 @@ angular.module('app',['ui.select2'])
 		if(result.type=="look"){
 			var currIndex = 0;
 			var url="data/scenicSpot/";
-
 			ctrl.scenicSpot=result.data;
-
 			ctrl.slides = [];
 			ctrl.addSlide = function(image) {
 				ctrl.slides.push({

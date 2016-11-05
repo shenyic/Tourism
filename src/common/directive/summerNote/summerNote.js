@@ -12,7 +12,9 @@ angular.module('app')
                 });
 
                 scope.$watch(function(){return ngModel.$modelValue;},function(){
-                    var str=ngModel.$modelValue.toString();
+                    if(typeof ngModel.$modelValue==='object') {
+                        var str = ngModel.$modelValue.toString();
+                    }
                     ele.summernote('code',str );
                 })
             }
