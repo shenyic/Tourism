@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('app')
-	.controller('systemUserCtrl', ['$http', '$uibModal', function ($http, $uibModal) {
+	.controller('orderCtrl', ['$http', '$uibModal', function ($http, $uibModal) {
 		var ctrl = this;
 
 		ctrl.checked=false;

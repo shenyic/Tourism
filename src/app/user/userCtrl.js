@@ -37,7 +37,7 @@ angular.module('app')
 			animation: true,
 			ariaLabelledBy: 'modal-title',
 			ariaDescribedBy: 'modal-body',
-			controller: 'systemUserModalCtrl',
+			controller: 'userModalCtrl',
 			controllerAs: 'ctrl'
 		};
 
@@ -83,7 +83,7 @@ angular.module('app')
 			});
 		};
 
-	}]).controller('systemUserModalCtrl', function ($uibModalInstance,result) {
+	}]).controller('userModalCtrl', function ($uibModalInstance,result) {
 		var ctrl = this;
 		if(result.type=="doEdit"){
 			ctrl.user=result.data;
