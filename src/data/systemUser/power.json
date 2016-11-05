@@ -9,60 +9,139 @@
   {
     "id": 2,
     "pId": 0,
-    "name": "系统用户管理",
+    "name": "日志管理",
     "open": true,
     "icon": "../vendor/zTree/css/zTreeStyle/img/diy/1_open.png"
   },
   {
-    "id": 21,
-    "pId": 2,
-    "name": "增加系统用户"
-  },
-  {
-    "id": 22,
-    "pId": 2,
-    "name": "编辑系统用户"
-  },
-  {
-    "id": 23,
-    "pId": 2,
-    "name": "删除系统用户"
-  },
-  {
-    "id": 24,
-    "pId": 2,
-    "name": "授予用户权限"
-  },
-  {
     "id": 3,
     "pId": 0,
-    "name": "景区管理",
+    "name": "系统用户管理",
     "open": true,
     "icon": "../vendor/zTree/css/zTreeStyle/img/diy/1_open.png"
   },
   {
     "id": 31,
     "pId": 3,
-    "name": "添加景区"
+    "name": "增加系统用户"
   },
   {
     "id": 32,
     "pId": 3,
-    "name": "编辑景区"
+    "name": "编辑系统用户"
   },
   {
     "id": 33,
     "pId": 3,
-    "name": "删除景区"
+    "name": "删除系统用户"
   },
   {
     "id": 34,
     "pId": 3,
+    "name": "授予用户权限"
+  },
+  {
+    "id": 4,
+    "pId": 0,
+    "name": "景点管理",
+    "open": true,
+    "icon": "../vendor/zTree/css/zTreeStyle/img/diy/1_open.png"
+  },
+  {
+    "id": 41,
+    "pId": 4,
+    "name": "添加景区"
+  },
+  {
+    "id": 42,
+    "pId": 4,
+    "name": "编辑景区"
+  },
+  {
+    "id": 43,
+    "pId": 4,
+    "name": "删除景区"
+  },
+  {
+    "id": 44,
+    "pId": 4,
     "name": "景区详情查看"
   },
   {
-    "id": 35,
-    "pId": 3,
+    "id": 45,
+    "pId": 4,
     "name": "景区位置查看"
+  },
+  {
+    "id": 5,
+    "pId": 0,
+    "name": "会员管理",
+    "open": true,
+    "icon": "../vendor/zTree/css/zTreeStyle/img/diy/1_open.png"
+  },
+  {
+    "id": 51,
+    "pId": 5,
+    "name": "编辑会员"
+  },
+  {
+    "id": 52,
+    "pId": 5,
+    "name": "删除会员"
+  },
+  {
+    "id": 53,
+    "pId": 5,
+    "name": "推送邮件"
+  },
+  {
+    "id": 6,
+    "pId": 0,
+    "name": "订单管理",
+    "open": true,
+    "icon": "../vendor/zTree/css/zTreeStyle/img/diy/1_open.png"
+  },
+  {
+    "id": 61,
+    "pId": 6,
+    "name": "编辑订单"
+  },
+  {
+    "id": 62,
+    "pId": 6,
+    "name": "删除订单"
+  },
+  {
+    "id": 63,
+    "pId": 6,
+    "name": "订单详情查看"
+  },
+  {
+    "id": 7,
+    "pId": 0,
+    "name": "新闻管理",
+    "open": true,
+    "icon": "../vendor/zTree/css/zTreeStyle/img/diy/1_open.png"
+  },
+  {
+    "id": 71,
+    "pId": 7,
+    "name": "编辑新闻"
+  },
+  {
+    "id": 72,
+    "pId": 7,
+    "name": "删除新闻"
+  },
+  {
+    "id": 73,
+    "pId": 7,
+    "name": "添加新闻"
+  },
+  {
+    "id": 74,
+    "pId": 7,
+    "name": "新闻详情查看"
   }
+
 ]
