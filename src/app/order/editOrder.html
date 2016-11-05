@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">修改订单</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">订单状态</label>
+            <div class="col-sm-8">
+                <select class="form-control" ng-model="ctrl.user.sex">
+                    <option value="男">已付款</option>
+                    <option value="女">待付款</option>
+                    <option value="女">已退款</option>
+                    <option value="女">待退款</option>
+                    <option value="女">废单</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">备注</label>
+            <div class="col-sm-8">
+                <textarea class="form-control" rows="10"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ctrl.ok()">保存</button>
+    <button class="btn btn-warning" type="button" ng-click="ctrl.cancel()">取消</button>
+</div>
